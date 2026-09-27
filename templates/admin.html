@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/feedback">Feedback</a>
+        <a href="/about">About</a>
+        <a href="/admin">Admin</a>
+    </nav>
+
+    <div class="admin-container">
+
+        <h1>Admin Dashboard</h1>
+
+        <h2>Student Feedback</h2>
+
+        <div class="table-container">
+
+    <table class="feedback-table">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Subject</th>
+                <th>Rating</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for item in feedbacks %}
+
+            <tr>
+                <td>{{ item[0] }}</td>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[2] }}</td>
+                <td>{{ item[3] }}/5</td>
+                <td>{{ item[4] }}</td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+    </div>
+
+</body>
+</html>

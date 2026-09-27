@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/feedback">Feedback</a>
+        <a href="/about">About</a>
+        <a href="/admin">Admin</a>
+    </nav>
+
+    <div class="feedback-container">
+
+        <h1>Student Feedback</h1>
+
+        <form method="POST" action="/feedback">
+
+            <label>Student Name</label>
+            <input type="text"
+                   name="student_name"
+                   placeholder="Enter your name"
+                   required>
+
+            <label>Subject</label>
+            <input type="text"
+                   name="subject"
+                   placeholder="Enter subject name"
+                   required>
+
+            <label>Rating</label>
+            <select name="rating" required>
+                <option value="">Select rating</option>
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Very Good</option>
+                <option value="3">3 - Good</option>
+                <option value="2">2 - Average</option>
+                <option value="1">1 - Poor</option>
+            </select>
+
+            <label>Comments</label>
+            <textarea name="comments"
+                      placeholder="Enter your feedback"
+                      rows="5"
+                      required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

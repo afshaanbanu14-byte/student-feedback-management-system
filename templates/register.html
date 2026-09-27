@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/feedback">Feedback</a>
+        <a href="/about">About</a>
+        <a href="/admin">Admin</a>
+    </nav>
+
+    <div class="auth-container">
+
+        <h1>Student Registration</h1>
+
+        <form id="registerForm" method="POST" action="/register">
+
+            <label>Full Name</label>
+            <input type="text"
+                   name="name"
+                   placeholder="Enter your full name">
+
+            <label>Email</label>
+            <input type="email"
+                   name="email"
+                   placeholder="Enter your email">
+
+            <label>Password</label>
+            <input type="password"
+                   name="password"
+                   placeholder="Create a password">
+
+            <label>Department</label>
+            <input type="text"
+                   name="department"
+                   placeholder="Enter your department">
+
+            <label>Year</label>
+            <select name="year">
+                <option value="">Select your year</option>
+                <option value="1st year">1st year</option>
+                <option value="2nd year">2nd year</option>
+                <option value="3rd year">3rd year</option>
+                <option value="4th year">4th year</option>
+            </select>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <p>
+            Already have an account?
+            <a href="/login">Login</a>
+        </p>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
